@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './header_with_searchbox.dart';
-import '../../constants.dart';
 import './recommended_title.dart';
+import './recommended_plants.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -13,7 +13,11 @@ class Body extends StatelessWidget {
       child: Column(
         children: [
           HeaderWithSearchBox(size: size),
-          RecommendedTitle(),
+          const RecommendedTitle(),
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: RecommendedPlants(),
+          )
         ],
       ),
     );
