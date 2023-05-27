@@ -3,8 +3,9 @@ import '../../constants.dart';
 
 class RecommendedTitle extends StatelessWidget {
   const RecommendedTitle({
-    super.key,
+    super.key, required this.title,
   });
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +18,8 @@ class RecommendedTitle extends StatelessWidget {
             decoration: const BoxDecoration(
                 border:
                     Border(bottom: BorderSide(width: 2, color: Colors.green))),
-            child: const Text(
-              'Recommended',
+            child: Text(
+              title,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ),

@@ -7,14 +7,16 @@ class RecommendedPlants extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: DUMMMY_PLANTS_CARDS
-          .map((cardData) => RecommendedPlantCard(
-              title: cardData.title,
-              image: cardData.imageDir,
-              country: cardData.country,
-              price: cardData.price))
-          .toList(),
-    );
+    return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: DUMMMY_PLANTS_CARDS
+              .map((cardData) => RecommendedPlantCard(
+                  title: cardData.title,
+                  image: cardData.imageDir,
+                  country: cardData.country,
+                  price: cardData.price))
+              .toList(),
+        ));
   }
 }
